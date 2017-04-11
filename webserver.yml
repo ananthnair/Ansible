@@ -1,10 +1,8 @@
 ---
 - name: Apache
-  become: true
   hosts: all
   tasks:
     - name: Installing Webserver
       yum: name=httpd state=present update_cache=yes
-      
     - name: starting apache2
       service: name=httpd state=started enabled=yes
