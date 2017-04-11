@@ -11,5 +11,5 @@
         - mod_wsgi
         - python-pip
         - python-virtualenv
-     - name: starting apache2
-       service: name=httpd state=started enabled=yes
+    - name: starting apache2
+      service: name=httpd state=started enabled=yes
