@@ -3,12 +3,7 @@
   hosts: all
   tasks:
     - name: Installing Webserver
-      yum: name={{item}} state=present update_cache=yes
-      with_items:
-        - https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
-        - httpd
-        - mod_wsgi
-        - python-pip
-        - python-virtualenv
+      yum: name=httpd state=present update_cache=yes
+      
     - name: starting apache2
       service: name=httpd state=started enabled=yes
