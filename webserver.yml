@@ -1,5 +1,7 @@
 ---
-- become: true
+- name: Apache
+  hosts: all
+  become: true
   tasks:
     - name: Installing Webserver
       yum: name={{item}} state=present update_cache=yes
