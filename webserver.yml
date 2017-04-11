@@ -1,5 +1,6 @@
 ---
 - name: Apache
+  become: true
   hosts: all
   tasks:
     - name: Installing Webserver
