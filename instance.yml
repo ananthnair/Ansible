@@ -1,0 +1,10 @@
+---
+- ec2:    
+    key_name: Funkey
+    instance_type: t2.micro
+    image: ami-b63769a1
+    wait: yes
+    vpc_subnet_id: subnet-ef5510c2
+    group: Web_SG
+    count: 1
+    assign_public_ip: yes
