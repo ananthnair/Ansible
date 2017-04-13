@@ -8,7 +8,8 @@
     - name: starting apache2
       service: name=httpd state=started enabled=yes
     - name: Changing the Apache Listening port
-      lineinfile: dest=/etc/httpd/conf/httpd.conf regexp="^Listen" line="Listen '{{ p }}'"
+      lineinfile: dest=/etc/httpd/conf/httpd.conf regexp="^Listen" 
+                  line="Listen {{ port }} "
       notify: restart httpd
   handlers:
     - name: restart httpd
