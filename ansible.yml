@@ -14,8 +14,7 @@
        region: us-east-1
        assign_public_ip: yes
        wait: true								
-       count: 2										
-  register: ec2_instance  
+       count: 2										 
                    																
 - hosts: apache
   gather_facts: true
