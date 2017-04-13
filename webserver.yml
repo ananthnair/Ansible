@@ -12,7 +12,7 @@
          dest: /etc/httpd/conf/httpd.conf 
          regexp: "^Listen"
          vars:
-            line="Listen {{ port }}"
+            line: "Listen {{ port }}"
       notify: restart httpd
   handlers:
     - name: restart httpd
