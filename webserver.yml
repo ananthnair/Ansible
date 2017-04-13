@@ -7,3 +7,9 @@
       yum: name=httpd state=present update_cache=yes
     - name: starting apache2
       service: name=httpd state=started enabled=yes
+    - name: Changing the Apache Listening port
+      lineinfile: dest=/etc/httpd/conf/httpd.conf regexp=^Listen line='{{port}}'
+      notify: restart httpd
+  handlers:
+    - name: restart httpd
+      service: name=httpd state=restarted
