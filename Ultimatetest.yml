@@ -7,6 +7,7 @@
     - name: Terminate instances that were previously launched
       ec2:
         state: 'absent'
+        region: us-east-1
         key_name: "{{ key }}"
 
 - hosts: localhost
