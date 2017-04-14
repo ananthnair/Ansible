@@ -1,10 +1,10 @@
 ---
 - hosts: localhost
   become: true
+  become_user : Kiran_erugu
   tasks:
    - name: Provisoning Rhel Instances in AWS
      local_action:
-       sudo: Vinnu!&)3
        module: ec2
        key_name: Funkey
        group_id: sg-007ab97f
