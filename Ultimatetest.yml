@@ -1,18 +1,4 @@
 ---
-
-- name: Terminate instances
-  hosts: localhost
-  connection: local
-  tasks:
-    - name: Terminate instances that were previously launched
-      ec2:
-        state: 'absent'
-        region: us-east-1
-        group_id: sg-007ab97f
-        image: ami-b63769a1
-        instance_type: t2.micro
-        key_name: "{{ key }}"
-
 - hosts: localhost
   connection: local
   tasks:
