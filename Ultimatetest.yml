@@ -25,7 +25,7 @@
       state: started
     with_items: "{{ ec2.instances }}"
     
-- name: "{{ gpname }}"
+- name: ananth
   hosts: all
   become: true
   tasks:
