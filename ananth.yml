@@ -5,7 +5,7 @@
   - name: Provisoning Rhel Instances in AWS
     local_action:
        module: ec2
-       key_name: Thekey
+       key_name: "{{ key }}"
        group_id: sg-007ab97f
        instance_type: t2.micro
        image: ami-b63769a1
@@ -13,14 +13,14 @@
        region: us-east-1
        assign_public_ip: yes
        wait: true
-       count: 2
+       count: "{{ n }}"
     register: ec2
      
   - name: Wait for the instances to boot by checking the ssh port
     wait_for: host={{item.public_ip}} port=22 delay=60 timeout=320 state=started
     with_items: '{{ ec2.instances }}'
     
-- name: ananth
+- name: "{{ gpname }}"
   hosts: all
   become: true
   tasks:
