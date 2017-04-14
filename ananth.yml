@@ -1,7 +1,7 @@
 ---
 - hosts: localhost
   become: true
-  become_user : Kiran_erugu
+  become_user : root
   tasks:
    - name: Provisoning Rhel Instances in AWS
      local_action:
