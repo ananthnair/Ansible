@@ -1,7 +1,6 @@
 ---
 - hosts: localhost
   connection: local
-  become: true
   tasks:
    - name: Provisoning Rhel Instances in AWS
      local_action:
