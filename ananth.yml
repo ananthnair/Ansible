@@ -1,0 +1,17 @@
+---
+- hosts: localhost
+  become: true
+  tasks:
+   - name: Provisoning Rhel Instances in AWS
+     local_action:
+       module: ec2
+       key_name: Funkey
+       group_id: sg-007ab97f
+       instance_type: t2.micro
+       image: ami-b63769a1
+       vpc_subnet_id: subnet-ef5510c2
+       region: us-east-1
+       assign_public_ip: yes
+       wait: true
+       count: 2
+     register: ec2
