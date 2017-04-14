@@ -5,7 +5,7 @@
    - name: Provisoning Rhel Instances in AWS
      local_action:
        module: ec2
-       key_name: Funkey
+       key_name: Thekey
        group_id: sg-007ab97f
        instance_type: t2.micro
        image: ami-b63769a1
