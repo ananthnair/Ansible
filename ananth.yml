@@ -16,7 +16,7 @@
        count: 2
      register: ec2
      
-- name: apache
+- name: ananth
   hosts: all
   become: true
   tasks:
