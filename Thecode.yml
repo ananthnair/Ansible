@@ -2,6 +2,8 @@
 
 - hosts: localhost
   connection: local
+  vars:
+    region: us-east-1
   tasks:
   - name: Collecting facts about the running instances
     ec2_remote_facts:
@@ -17,7 +19,7 @@
   - name: Terminate the already existing instances
     ec2:
       instance_ids: '{{ item.instance_ids }}'
-      region: us-east-1
+      region: "{{ region }}"
       key_name: "{{ key }}"
       state: absent
       wait: True
