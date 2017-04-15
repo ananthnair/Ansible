@@ -12,7 +12,7 @@
         instance-type: t2.micro
         key_name: "{{ key }}"
         group_id: sg-007ab97f
-        region: us-east-1
+        region: "{{ region }}"
         vpc_subnet_id: subnet-ef5510c2
     register: ec2_info
 
