@@ -6,12 +6,9 @@
   - name: Collecting facts about the running instances
     ec2_remote_facts:
       filters:
-        instance-state-name: running
         instance-type: t2.micro
         key_name: "{{ key }}"
-        group_id: sg-007ab97f
-        vpc_subnet_id: subnet-ef5510c2
-      region: us-east-1
+        region: us-east-1
    register: ec2_info
 
   - name: Terminate the pre-existing instances
