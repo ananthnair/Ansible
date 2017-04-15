@@ -5,9 +5,7 @@
   connection: local
   vars:
     instance_ids:
-      - 'i-xxxxxx'
-      - 'i-xxxxxx'
-      - 'i-xxxxxx'
+      - 'i-05bfa1ce7947acf5b'
     region: us-east-1
   tasks:
     - name: Terminate the already existing instances
@@ -17,8 +15,7 @@
         key_name: "{{ key }}"
         state: absent
         wait: True
-        vpc_subnet_id: subnet-ef5510c2
-
+        
 - hosts: localhost
   connection: local
   tasks:
