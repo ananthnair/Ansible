@@ -5,19 +5,21 @@
   tasks:
   - name: Collecting facts about the running instances
     ec2_remote_facts:
+      region: us-east-1
       filters:
+        instance-state-name: running
         instance-type: t2.micro
         key_name: "{{ key }}"
-      region: us-east-1
     register: ec2_info
 
   - name: Terminate the pre-existing instances
     ec2:
-      instance_ids: '{{ item.instance_id }}'
+      instance_ids: '{{ item.id }}'
       region: us-east-1
       key_name: "{{ key }}"
-      state: absent
+      state: 'absent'
       wait: True
+      wait_timeout: 500  
     with_items: "{{ ec2_info.instances }}"
 
   - name: Provisoning Rhel Instances in AWS
