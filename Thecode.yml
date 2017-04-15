@@ -3,7 +3,7 @@
 - hosts: localhost
   connection: local
   vars:
-    region: us-east-1
+    aws_region: us-east-1
   tasks:
   - name: Collecting facts about the running instances
     ec2_remote_facts:
@@ -12,14 +12,14 @@
         instance-type: t2.micro
         key_name: "{{ key }}"
         group_id: sg-007ab97f
-        region: "{{ region }}"
+        region: "{{ aws_region }}"
         vpc_subnet_id: subnet-ef5510c2
     register: ec2_info
 
   - name: Terminate the already existing instances
     ec2:
       instance_ids: '{{ item.instance_ids }}'
-      region: "{{ region }}"
+      region: "{{ aws_region }}"
       key_name: "{{ key }}"
       state: absent
       wait: True
