@@ -8,8 +8,8 @@
       filters:
         instance-type: t2.micro
         key_name: "{{ key }}"
-        region: us-east-1
-   register: ec2_info
+      region: us-east-1
+    register: ec2_info
 
   - name: Terminate the pre-existing instances
     ec2:
