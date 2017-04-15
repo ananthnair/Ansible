@@ -13,7 +13,7 @@
 
   - name: Terminate the pre-existing instances
     ec2:
-      instance_ids: '{{ item.instance_ids }}'
+      instance_id: '{{ item.instance_id }}'
       region: us-east-1
       key_name: "{{ key }}"
       state: absent
