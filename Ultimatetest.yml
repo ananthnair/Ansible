@@ -5,7 +5,7 @@
   connection: local
   vars:
     instance_ids:
-      - 'i-05bfa1ce7947acf5b'
+      - 'i-xxxxxx'
     region: us-east-1
   tasks:
     - name: Terminate the already existing instances
